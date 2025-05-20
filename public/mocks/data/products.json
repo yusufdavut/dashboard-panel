@@ -1,0 +1,72 @@
+[
+  {
+    "id": "1",
+    "name": "iPhone 14 Pro",
+    "description": "Apple’ın en yeni akıllı telefonu",
+    "price": 49999,
+    "category": "Telefon"
+  },
+  {
+    "id": "2",
+    "name": "MacBook Air M2",
+    "description": "Yeni nesil MacBook",
+    "price": 79999,
+    "category": "Bilgisayar"
+  },
+  {
+    "id": "3",
+    "name": "AirPods Pro",
+    "description": "Gelişmiş gürültü engelleme",
+    "price": 5999,
+    "category": "Aksesuar"
+  },
+  {
+    "id": "4",
+    "name": "Samsung Galaxy S23",
+    "description": "Samsung'un amiral gemisi",
+    "price": 42999,
+    "category": "Telefon"
+  },
+  {
+    "id": "5",
+    "name": "Asus ROG Strix",
+    "description": "Gaming laptop",
+    "price": 65999,
+    "category": "Bilgisayar"
+  },
+  {
+    "id": "6",
+    "name": "Sony WH-1000XM5",
+    "description": "Üst düzey kulaklık",
+    "price": 8499,
+    "category": "Aksesuar"
+  },
+  {
+    "id": "7",
+    "name": "iPad Pro",
+    "description": "Yüksek performanslı tablet",
+    "price": 34999,
+    "category": "Tablet"
+  },
+  {
+    "id": "8",
+    "name": "Logitech MX Master 3S",
+    "description": "Ergonomik mouse",
+    "price": 2299,
+    "category": "Aksesuar"
+  },
+  {
+    "id": "9",
+    "name": "HP Envy 13",
+    "description": "Şık ve hafif laptop",
+    "price": 28999,
+    "category": "Bilgisayar"
+  },
+  {
+    "id": "10",
+    "name": "Xiaomi 13 Pro",
+    "description": "Fiyat/performans amiral gemisi",
+    "price": 28999,
+    "category": "Telefon"
+  }
+]
