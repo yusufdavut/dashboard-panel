@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Button, Input, Form } from "antd";
 import { addProduct } from "../slices/productSlice";
+import AppTitle from "../components/AppTitle";
 
 const AddProductPage = () => {
   const dispatch = useDispatch();
@@ -24,6 +25,8 @@ const AddProductPage = () => {
 
   return (
     <Form form={form} layout="vertical" onFinish={onFinish}>
+      <AppTitle title="Ürün Ekle" />
+
       <Form.Item name="name" label="Ürün Adı" rules={[{ required: true }]}>
         <Input />
       </Form.Item>

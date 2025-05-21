@@ -4,7 +4,7 @@ import {
   type PayloadAction,
 } from "@reduxjs/toolkit";
 import type { Product } from "../types";
-import axiosInstance from "../../../shared/utils/axios";
+import axiosInstance from "../../../utils/axios";
 
 interface ProductState {
   products: Product[];

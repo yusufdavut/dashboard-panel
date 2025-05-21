@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { Input, Select, Card, Spin, Row, Col, theme, Alert } from "antd";
+import { Input, Select, Card, Spin, theme, Alert } from "antd";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../../../app/store";
 import { fetchProducts } from "../slices/productSlice";
+import AppTitle from "../components/AppTitle";
 
 const ProductListPage = () => {
   const dispatch = useDispatch();
@@ -47,14 +48,18 @@ const ProductListPage = () => {
 
   return (
     <div>
-      <div>
+      <AppTitle title="Ürünler" />
+
+      <div className="w-full">
         <Input
           placeholder="Ürün ara..."
           onChange={(e) => setSearch(e.target.value)}
           style={{ marginBottom: 16 }}
           value={search}
           allowClear
+          className="w-full"
         />
+
         <Select
           placeholder="Kategori seç"
           onChange={(value) => setCategory(value)}
@@ -63,38 +68,32 @@ const ProductListPage = () => {
             label: c,
             value: c,
           }))}
-          style={{ marginBottom: 16, width: 300 }}
           value={category || undefined}
+          className="w-full md:w-[300px] mb-4"
         />
       </div>
 
-      <Row gutter={16}>
+      <div className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(240px,1fr))]">
         {filtered.map((p) => (
-          <Col
-            key={p.id}
+          <Card
+            hoverable
+            title={p.name}
+            onClick={() => navigate(`/products/${p.id}`)}
             className="gutter-row"
-            span={6}
-            style={{ marginBottom: 16 }}
           >
-            <Card
-              hoverable
-              title={p.name}
-              onClick={() => navigate(`/products/${p.id}`)}
-            >
-              <p className="text-sm mb-2">{p.description}</p>
-              <div className="flex justify-between items-center w-full">
-                <p
-                  className="rounded-md text-white py-1 px-2"
-                  style={{ background: colorPrimary }}
-                >
-                  {p.category}
-                </p>
-                <p className="text-gray-800">Fiyat: {p.price}₺</p>
-              </div>
-            </Card>
-          </Col>
+            <p className="text-sm mb-2">{p.description}</p>
+            <div className="flex flex-col lg:flex-row justify-between lg:items-center w-full">
+              <p
+                className="rounded-lg text-white py-1 px-2 order-2 lg:order-1 w-fit"
+                style={{ background: colorPrimary }}
+              >
+                {p.category}
+              </p>
+              <p className="text-gray-800 mb-6 lg:mb-0">Fiyat: {p.price}₺</p>
+            </div>
+          </Card>
         ))}
-      </Row>
+      </div>
     </div>
   );
 };

@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { updateProduct } from "../slices/productSlice";
 import { Form, Input, Button } from "antd";
 import type { RootState } from "../../../app/store";
+import AppTitle from "../components/AppTitle";
 
 const EditProductPage = () => {
   const { id } = useParams();
@@ -33,6 +34,8 @@ const EditProductPage = () => {
 
   return (
     <Form form={form} layout="vertical" onFinish={onFinish}>
+      <AppTitle title="Ürün Düzenle" />
+
       <Form.Item name="name" label="Ürün Adı" rules={[{ required: true }]}>
         <Input />
       </Form.Item>
